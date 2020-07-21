@@ -1,6 +1,15 @@
 <?php
 
+use App\Category;
+use App\Comment;
+use App\Image;
+use App\Post;
+use App\User;
+use App\Video;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
+use Faker\Generator as Faker;
+use phpDocumentor\Reflection\Types\Resource_;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +29,7 @@ Route::get('/', function () {
 Auth::routes(['verify'=>true]);
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/test', function () {
+    $post = Post::paginate();
+    return new \App\Http\Resources\PostsResource($post);
+});

@@ -28,12 +28,32 @@ Route::get('/', function () {
 
 Auth::routes(['verify'=>true]);
 
+
+
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::middleware(['auth'])->group(function(){
+    Route::get('/categories', 'CategoryController@index')->name('categories');
+    Route::post('/categories', 'CategoryController@store')->name('save-category');
+    Route::get('/category/{id}', 'CategoryController@show');
+    
+    Route::get('/tags', 'TagController@index');
+    Route::get('/tag/{id}', 'TagController@show');
+    Route::post('/tags', 'TagController@store')->name('save-tag');
+    
+    Route::get('/comments', 'CommentController@index');
+    Route::get('/comment/{id}', 'CommentController@show');
+
+    Route::get('/posts', 'PostController@index');
+    Route::get('/post/{id}', 'PostController@show');
+    
+});
+
+
+
 Route::get('/test', function () {
     $post = Category::paginate();
     return new \App\Http\Resources\CategoriesResource($post);
-    // $post = Category::paginate();
-    // return new \App\Http\Resources\CategoriesResource($post);
 });
 // Route::get('/post_tag', function () {
 //     $faker = new Faker();

@@ -1,0 +1,2 @@
+
+<li>{{$post->title}}</li>

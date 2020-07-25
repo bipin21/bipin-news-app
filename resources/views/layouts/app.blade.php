@@ -18,6 +18,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    @toastr_css
 </head>
 <body>
     <div id="app">
@@ -72,9 +73,12 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="container">
             @yield('content')
         </main>
     </div>
 </body>
+@jquery
+    @toastr_js
+    @toastr_render
 </html>

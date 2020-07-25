@@ -7,9 +7,9 @@ use Faker\Generator as Faker;
 use Illuminate\Support\Facades\DB;
 
 $faker = new Faker();
-// DB::table('post_tag')->updateOrInsert(
-//     [
-//     'post_id'=>$faker->numberBetween(1,1500),
-//     'tag_id'=>$faker->numberBetween(1,50)
-//     ]
-// );
+DB::table('post_tag')->updateOrInsert(
+    [
+    'post_id'=>$faker->numberBetween(1,1500),
+    'tag_id'=>$faker->numberBetween(1,50)
+    ]
+);

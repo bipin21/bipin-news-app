@@ -37,16 +37,19 @@ Route::middleware(['auth'])->group(function(){
     Route::post('/categories', 'CategoryController@store')->name('save-category');
     Route::get('/category/{id}', 'CategoryController@show');
     
-    Route::get('/tags', 'TagController@index');
+    Route::get('/tags', 'TagController@index')->name('tags');
     Route::get('/tag/{id}', 'TagController@show');
     Route::post('/tags', 'TagController@store')->name('save-tag');
     
-    Route::get('/comments', 'CommentController@index');
+    Route::get('/comments', 'CommentController@index')->name('comments');
     Route::get('/comment/{id}', 'CommentController@show');
 
-    Route::get('/posts', 'PostController@index');
-    Route::get('/post/{id}', 'PostController@show');
+    Route::get('/posts', 'PostController@index')->name('posts');
+    Route::get('/post/{id}', 'PostController@show')->name('show-post');
+    Route::get('/new-post', 'PostController@newPost')->name('new-post');
+    Route::post('/new-post', 'PostController@store')->name('save-post');
     
+    Route::get('/users', 'UserController@index')->name('users');
 });
 
 

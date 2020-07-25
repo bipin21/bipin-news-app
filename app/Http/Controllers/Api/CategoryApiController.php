@@ -1,13 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
 use App\Category;
+use App\Http\Controllers\Controller;
 use App\Http\Controllers\shared\CategoriesMasterController;
 use App\Http\Resources\CategoriesResource;
 use Illuminate\Http\Request;
 
-class CategoryController extends Controller
+class CategoryApiController extends Controller
 {
     public $masterController;
     public function __construct(){
@@ -15,9 +16,7 @@ class CategoryController extends Controller
     }
     // Get all
     public function index(){
-        return view('categories.categories')->with([
-            'categories' => $this->masterController->index()
-        ]);
+        return $this->masterController->index();
     }
 
     // get single

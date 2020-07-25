@@ -35,3 +35,16 @@ Route::get('/test', function () {
     // $post = Category::paginate();
     // return new \App\Http\Resources\CategoriesResource($post);
 });
+// Route::get('/post_tag', function () {
+//     $faker = new Faker();
+    
+//     for($i=1;$i<1500;$i++){
+//         DB::table('post_tag')->updateOrInsert(
+//             [
+//             'post_id'=>rand(1,1500),
+//             'tag_id'=>rand(1,50)
+//             ]
+//         );
+//     }
+  
+// });

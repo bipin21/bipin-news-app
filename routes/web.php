@@ -30,6 +30,8 @@ Auth::routes(['verify'=>true]);
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/test', function () {
-    $post = Post::paginate();
-    return new \App\Http\Resources\PostsResource($post);
+    $post = Category::paginate();
+    return new \App\Http\Resources\CategoriesResource($post);
+    // $post = Category::paginate();
+    // return new \App\Http\Resources\CategoriesResource($post);
 });

@@ -25,6 +25,6 @@ class DatabaseSeeder extends Seeder
         // factory(Tag::class,1500)->create();
         // factory(Image::class,2500)->create();
         // factory(Video::class,500)->create();
-        factory(Comment::class,2500)->create();
+        // factory(Comment::class,2500)->create();
     }
 }

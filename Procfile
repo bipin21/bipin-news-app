@@ -1,0 +1,1 @@
+web: vendor/bipi/heroku-php-apache2 public/

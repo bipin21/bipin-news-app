@@ -8,6 +8,7 @@ use App\Tag;
 use App\User;
 use App\Video;
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Eloquent\Factory;
 
 class DatabaseSeeder extends Seeder
 {

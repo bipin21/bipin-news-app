@@ -9,6 +9,7 @@ use App\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
@@ -71,7 +72,8 @@ class PostController extends Controller
             $counter = 0;
             $images = $request->file('post_images');
             foreach ($images as $img) {
-                $path = $img->store('public');
+                // $path = $img->store('public');
+                $path = Storage::disk('public')->put('uploads/', $img);
                 $image = new Image();
                 $image->description = '';
                 $image->url = $path;

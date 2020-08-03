@@ -7,22 +7,7 @@
 				<div class="row">
 					<div class="col-12 col-md-10 col-lg-8">
 						<div class="row">
-						@if(count($categories) > 0)
-                                        @foreach($categories as $cat)
-										<div class="col-12 col-md-4 col-lg-4">
-								<a href="/category/{{$cat->title}}/{{$cat->id}}">
-									<div class="banner_box">
-										<i class="fab fa-laravel"></i>
-										<h3 class="banner_box_h3">{{$cat->title}}</h3>
-										<p></p>
-									</div>
-								</a>
-							</div>
-                                        @endforeach
-                                    @endif
-							
-
-					
+                            <h1 class="">Explore all blogs from our awesome website</h1>
 						</div>
 					</div>
 				</div>
@@ -39,24 +24,21 @@
 					</div>
 					<div class="row">
 						@if(count($blogs) > 0)
-						
 						@foreach($blogs as $blog)
-						<?php
-						// print_r(($blog->user));
-						// exit();
-						
-						?>
 						<div class="col-12 col-md-6 col-lg-4">
 							<a href="blog/{{$blog->id}}">
 								<div class="home_card">
 									<div class="home_card_top">
-										<img src="{{$blog->images[0]->url}}" alt="image">
+										<img src="{!! !empty($blog->images[0]) ? $blog->images[0]->url : 'variable does not exist' !!}" alt="image">
 									</div>
 									<div class="home_card_bottom">
 										<div class="home_card_bottom_text">
 											<ul class="home_card_bottom_text_ul">
 											
-		
+												<li>
+													<a href="">{{$blog->category->title}}</a>
+													<span><i class="fas fa-angle-right"></i></span>
+												</li>
 											</ul>
 											<a href="blog/{{$blog->id}}">
 												<h2 class="home_card_h2">{{$blog->title}}</h2>
@@ -84,11 +66,12 @@
 						@endforeach
 						@endif
 					</div>
-					<div class="text-center">
-						<button><a href="/blogs">View All</a></button>
-					</div>
+				 <!-- PAGINATION -->
+			{!! $blogs->links() !!}
+			<!-- PAGINATION -->
 				</div>
-			</div>
+            </div>
+           
 		</div>
 		<!-- BODY -->
 @endsection

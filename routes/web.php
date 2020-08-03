@@ -21,15 +21,14 @@ use phpDocumentor\Reflection\Types\Resource_;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes(['verify'=>true]);
 
-
-
+Route::get('/', 'BlogController@index');
+Route::get('/blog/{slug}', 'BlogController@blogSingle');
+Route::get('/category/{categoryName}/{id}', 'BlogController@categoryIndex');
+Route::get('/tag/{tagName}/{id}', 'BlogController@tagIndex');
+Route::get('blogs', 'BlogController@allBlogs');
+Route::get('search', 'BlogController@search');
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::middleware(['auth'])->group(function(){

@@ -21,7 +21,7 @@
 										<li>1 Feb, 2020</li>
 									</ul>
 									<div class="single_blog_top">
-										<img src="{!! !empty($blog->images[0]) ? url($blog->images[0]->url) : asset('images/blog.png') !!}" alt="image">
+										<img src="{!! !empty($blog->images[0]) ? url($blog->images[0]->url) : asset('images/blog.png') !!}" width="500" alt="image">
 									</div>
 								</div>
 								<div class="blog_post">

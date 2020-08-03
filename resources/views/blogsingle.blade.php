@@ -18,12 +18,11 @@
                                                 <li>
                                                     <a href="/category/{{$blog->category->title}}/{{$blog->category_id}}">{{$blog->category->title}}</a>
 												</li>
-												<div class="single_blog_top">
-										<img src="{!! !empty($blog->images[0]) ? url($blog->images[0]->url) : '' !!}" alt="image">
-									</div>
-            
 										<li>1 Feb, 2020</li>
 									</ul>
+									<div class="single_blog_top">
+										<img src="{!! !empty($blog->images[0]) ? url($blog->images[0]->url) : asset('images/blog.png') !!}" alt="image">
+									</div>
 								</div>
 								<div class="blog_post">
                                 <h1 class="blog_post_h1">{{$blog->title}}</h1>

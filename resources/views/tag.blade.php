@@ -37,10 +37,10 @@
 						@if(count($blogs) > 0)
 						@foreach($blogs as $blog)
 						<div class="col-12 col-md-6 col-lg-4">
-							<a href="/blog/{{$blog->slug}}">
+							<a href="/blog/{{$blog->id}}">
 								<div class="home_card">
 									<div class="home_card_top">
-										<img src="{{$blog->featuredImage}}" alt="image">
+										<img src="{{$blog->images[0]->url}}" alt="image">
 									</div>
 									<div class="home_card_bottom">
 										<div class="home_card_bottom_text">

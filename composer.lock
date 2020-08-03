@@ -4850,9 +4850,7 @@
                 "laravel",
                 "page"
             ],
-            "time": "2020-08-01T21:20:01+00:00"
-        },
-        {
+            "time": "2020-08-01T21:20:01+00:00",
             "name": "facade/ignition-contracts",
             "version": "1.0.1",
             "source": {

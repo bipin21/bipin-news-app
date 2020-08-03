@@ -12,7 +12,7 @@ class PostApiController extends Controller
     
      // Get all posts
      public function index(){
-        $posts = Post::with(['user','images','videos','category'])->paginate();
+        $posts = Post::with(['user','images','videos','category'])->orderBy('id', 'desc')->paginate();
         return PostResource::collection($posts);
     }
 }

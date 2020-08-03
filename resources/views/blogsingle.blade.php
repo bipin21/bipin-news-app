@@ -17,7 +17,10 @@
 									<ul class="blog_post_top_ul">
                                                 <li>
                                                     <a href="/category/{{$blog->category->title}}/{{$blog->category_id}}">{{$blog->category->title}}</a>
-                                                </li>
+												</li>
+												<div class="single_blog_top">
+										<img src="{!! !empty($blog->images[0]) ? url($blog->images[0]->url) : '' !!}" alt="image">
+									</div>
             
 										<li>1 Feb, 2020</li>
 									</ul>

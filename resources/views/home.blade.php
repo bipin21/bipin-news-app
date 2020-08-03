@@ -50,7 +50,7 @@
 							<a href="blog/{{$blog->id}}">
 								<div class="home_card">
 									<div class="home_card_top">
-										<img src="{!! !empty($blog->images[0]) ? $blog->images[0]->url : asset('images/blog.png') !!}" alt="image">
+										<img src="{!! !empty($blog->images[0]) ? url($blog->images[0]->url) : asset('images/blog.png') !!}" alt="image">
 									</div>
 									<div class="home_card_bottom">
 										<div class="home_card_bottom_text">
